@@ -48,14 +48,35 @@ var opt = {
     subdomain: argv.subdomain,
 };
 
-const PrintRequests = argv['print-requests'];
+const PrintRequests = true;
 
 lt_client(opt.port, opt, function(err, tunnel) {
     if (err) {
         throw err;
     }
 
-    console.log('your url is: %s', tunnel.url);
+    console.clear();
+    console.log('          (((((((((((%           ')
+    console.log('(((((((((((((((((((((((((((((((((((((((')
+    console.log('(((((((((((((((((((((((((((((((((((((((')
+    console.log('((((((((((((/*,/(,,/(#(((*     ..((((((')
+    console.log('#(((((*.#/*.,, ,#%, ,*// %      ,((((((')
+    console.log(' ((*%%,,/%   #   %(  %%%%%  ,%%(((((((#')
+    console.log(' (((*%  ,%  .%%  (%  ( . %   /  (/(((( ')
+    console.log(' (((.%   %   %%%%%%     .%,     ,/(((( ')
+    console.log(' &((,%,  %,  %%#,,%   %%%%(  %%#/((((( ')
+    console.log('  ((/%(  %#  %%*  %,  (, ,%  *   ((((( ')
+    console.log('  (((%%  (%  .    %#    / %      */((# ')
+    console.log('  (((#%  .%%.   /.%%%%%%%%%%%%%%(/*.(  ')
+    console.log('  #((*%%%..%%%%.((.*#(((((((#&(((((((  ')
+    console.log('   ((((((&&%(((((((&&&((((((% (((((((  ')
+    console.log('   /(((((   ((((((     (((((& ((((%    ')
+
+    console.log('');
+    console.log('URL: %s', tunnel.url);
+    console.log('');
+    console.log('Requests');
+    console.log('------------');
 
     if (argv.open) {
         open_url.open(tunnel.url);
@@ -67,7 +88,7 @@ lt_client(opt.port, opt, function(err, tunnel) {
 
     if (PrintRequests) {
         tunnel.on('request', function(info) {
-            console.log(new Date().toString(), info.method, info.path);
+            console.log(info.method, info.path);
         });
     }
 });
