@@ -1,12 +1,12 @@
 {
-  "author": "Roman Shtylman <shtylman@gmail.com>",
-  "name": "localtunnel",
-  "description": "expose localhost to the world",
+  "author": "Alex Sopinka <alex@obie.ai>",
+  "name": "icee-client",
+  "description": "Chill with localhost securely exposed.",
   "version": "1.9.1",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git://github.com/localtunnel/localtunnel.git"
+    "url": "git://github.com/obie-ai/icee-client.git"
   },
   "dependencies": {
     "axios": "0.17.1",
@@ -21,7 +21,7 @@
     "test": "mocha --ui qunit --reporter list --timeout 10000 -- test/index.js"
   },
   "bin": {
-    "lt": "./bin/client"
+    "icee": "./bin/client"
   },
   "main": "./client.js"
 }
